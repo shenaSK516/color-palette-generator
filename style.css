@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+body{
+    background:linear-gradient(135deg,#81eaf0,#baf7f8) ;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.container{
+    background: rgba(255, 255, 255, 0.682);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(106, 106, 106, 0.148);
+    padding: 2rem;
+    width: 100%;
+    max-width: 950px;
+    animation: fadeIn 0.8s ease;   
+} 
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}   
+
+h1{
+    text-align: center;
+    margin-bottom:1.5rem;
+    padding-bottom: 25px;
+    color: rgb(46, 45, 45);
+    position: relative;
+    padding-bottom: 0.5rem;
+    
+}
+h1:after{
+    content:" ";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background-color: #12b5a0;
+    border-radius: 2px;
+}
+#generate-btn{
+    background: linear-gradient(45deg,#1ef5b8,#864ef5);
+    color: white;
+    border: none;
+    padding: 1.2rem 1.3rem;
+    border-radius: 50px;
+    font-weight: 500;
+    margin-bottom :2rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+
+}
+#generate-btn:hover{
+    transform: translateY(-6px);
+    box-shadow:0 6px 15px rgba(138, 138, 138, 0.364); 
+    background: linear-gradient(45deg,#864ef5,#1ef5b8);
+}
+#generate-btn:active{
+    transform: translateY(0);
+}
+.color-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+}
+.color-box{
+    border-radius: 10px;
+    box-shadow:0 6px 15px rgba(112, 111, 111, 0.212); 
+    transition:transform 0.2s;
+    overflow: hidden;
+}
+.color-box:hover{
+    transform: translateY(-8px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.15);
+
+}
+.color{
+    cursor: pointer;
+    height:180px;
+    transition: background-color 0.5s ease;
+
+}
+.color-info{
+    background-color: white;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+} 
+.copy-btn{
+    cursor: pointer;
+    color:#6b6c6c
+}   
+
+.copy-btn:hover{
+    color: #38b49d;
+}
+
+.toast{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #d2fdf7;
+    color: rgb(1, 58, 49);
+    padding: 12px 20px;
+    border: 2px solid #016363;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width:760px){
+    .color-container{
+        grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+
+    }
+}
